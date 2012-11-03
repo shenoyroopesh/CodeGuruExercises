@@ -9,11 +9,6 @@ namespace CodeGuru.Exercises
     public class Level
     {
         /// <summary>
-        /// Circular reference back to the course that this level belongs to
-        /// </summary>
-        public Course Course { get; set; }
-
-        /// <summary>
         /// Uri for this level
         /// </summary>
         public Uri LevelVideoUri { get; set; }
@@ -24,7 +19,7 @@ namespace CodeGuru.Exercises
         public int Number { get; set; }
 
         /// <summary>
-        /// 
+        /// List of challenges in this level
         /// </summary>
         public IList<IChallenge> Challenges { get; set; }
     }
