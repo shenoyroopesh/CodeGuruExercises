@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGuru.Exercises", "..\CodeGuru.Exercises\CodeGuru.Exercises.csproj", "{0A28DA74-C317-4C6C-BBF0-0E99022C3B6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitExercisesTests", "NUnitExercisesTests\NUnitExercisesTests.csproj", "{DC3DF0A5-4E14-43AE-911A-666A8B34892C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitExercises", "NUnitExercises\NUnitExercises.csproj", "{3CC7E1C4-1095-45F1-BD98-C23B234BD06E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A28DA74-C317-4C6C-BBF0-0E99022C3B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A28DA74-C317-4C6C-BBF0-0E99022C3B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A28DA74-C317-4C6C-BBF0-0E99022C3B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A28DA74-C317-4C6C-BBF0-0E99022C3B6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC3DF0A5-4E14-43AE-911A-666A8B34892C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC3DF0A5-4E14-43AE-911A-666A8B34892C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC3DF0A5-4E14-43AE-911A-666A8B34892C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC3DF0A5-4E14-43AE-911A-666A8B34892C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CC7E1C4-1095-45F1-BD98-C23B234BD06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CC7E1C4-1095-45F1-BD98-C23B234BD06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CC7E1C4-1095-45F1-BD98-C23B234BD06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CC7E1C4-1095-45F1-BD98-C23B234BD06E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
