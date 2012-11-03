@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="ServiceStack">
       <HintPath>..\packages\ServiceStack.3.9.25\lib\net35\ServiceStack.dll</HintPath>
@@ -127,6 +130,10 @@
     <ProjectReference Include="..\CodeGuru.Data\CodeGuru.Data.csproj">
       <Project>{957D4F37-B1D4-422D-83F3-E415F357E9BD}</Project>
       <Name>CodeGuru.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeGuru.Exercises\CodeGuru.Exercises.csproj">
+      <Project>{0A28DA74-C317-4C6C-BBF0-0E99022C3B6C}</Project>
+      <Name>CodeGuru.Exercises</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

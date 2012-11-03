@@ -1,5 +1,7 @@
-﻿using System.Net;
+﻿using System.Collections.Generic;
+using System.Net;
 using CodeGuru.Data;
+using CodeGuru.Exercises;
 using Funq;
 using ServiceStack.Logging;
 using ServiceStack.Logging.Support.Logging;
@@ -7,6 +9,7 @@ using ServiceStack.Razor;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 using ServiceStack.WebHost.Endpoints;
+using System.Linq;
 
 //The entire C# code for the stand-alone RazorRockstars demo.
 namespace CourseGuru.Web
@@ -32,13 +35,14 @@ namespace CourseGuru.Web
     }
 
     [Route("/courses")]
-    public class AllCourses : IReturn<Courses> { } 
+    public class AllCourses : IReturn<List<Course>> { } 
 
     public class CoursesService : Service
     {
         public object Any(AllCourses request)
         {
-            return new Courses();
+            //for some reason Courses cannot be sent back directly, even if typecasted back to a List
+            return new List<Course> {new Courses().First()};
         }
     }
 }

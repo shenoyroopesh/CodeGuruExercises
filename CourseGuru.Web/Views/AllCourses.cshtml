@@ -1,2 +1,11 @@
-﻿@inherits ServiceStack.Razor.ViewPage<CodeGuru.Exercises.Course>
+﻿@inherits ViewPage<List<CodeGuru.Exercises.Course>>
     
+@{
+    ViewBag.Title = Model.First().CourseName;
+}
+
+<div align="center">
+    <iframe src="@Model.First().Levels.First().LevelVideoUri" width="800" 
+    height="600" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+    </iframe> 
+</div>
