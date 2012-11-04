@@ -7,6 +7,8 @@ namespace CodeGuru.Exercises
     /// </summary>
     public class Course
     {
+        public int Id { get; set; }
+
         /// <summary>
         /// Course Name for this course
         /// </summary>

@@ -34,15 +34,37 @@ namespace CourseGuru.Web
         }
     }
 
-    [Route("/courses")]
-    public class AllCourses : IReturn<List<Course>> { } 
+    [Route("/course")]
+    [Route("/course/{Id}")]
+    public class  WebCourse : IReturn<Course>
+    {
+        public int Id { get; set; }
+    } 
 
     public class CoursesService : Service
     {
-        public object Any(AllCourses request)
+        public object Any(WebCourse request)
         {
-            //for some reason Courses cannot be sent back directly, even if typecasted back to a List
-            return new List<Course> {new Courses().First()};
+            return new Courses().First(p => p.Id == request.Id);
         }
     }
+
+    [Route("/course/{Id}/level/{LevelNo}")]
+    public class WebCourseLevel : IReturn<Level>
+    {
+        public int Id { get; set; }
+        public int LevelNo { get; set; }
+    }
+
+    public class LevelsService : Service
+    {
+        public object Get(WebCourseLevel request)
+        {
+            return new Courses()
+                .First(p => p.Id == request.Id)
+                .Levels
+                .First(q => q.Number == request.LevelNo);
+        }
+    }
+
 }

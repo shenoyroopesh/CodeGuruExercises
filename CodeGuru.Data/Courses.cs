@@ -16,6 +16,7 @@ namespace CodeGuru.Data
             //TODO: make this come from a database!
             Add(new Course
                 {
+                    Id = 1,
                     CourseName = "Testing With NUnit",
                     Levels = new List<Level>
                         {

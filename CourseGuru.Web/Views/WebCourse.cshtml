@@ -1,0 +1,14 @@
+﻿@inherits ViewPage<CodeGuru.Exercises.Course>
+    
+@{
+    ViewBag.Title = Model.CourseName;
+}
+
+<h1>@Model.CourseName</h1>
+<a href="/course/@Model.Id/level/1">Start the course</a>
+
+@*<div align="center">
+    <iframe src="@Model.Levels.First().LevelVideoUri" width="800" 
+    height="600" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+    </iframe> 
+</div>*@
