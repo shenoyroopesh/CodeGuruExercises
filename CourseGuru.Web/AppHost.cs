@@ -11,7 +11,6 @@ using ServiceStack.ServiceInterface;
 using ServiceStack.WebHost.Endpoints;
 using System.Linq;
 
-//The entire C# code for the stand-alone RazorRockstars demo.
 namespace CourseGuru.Web
 {
     public class AppHost : AppHostBase
