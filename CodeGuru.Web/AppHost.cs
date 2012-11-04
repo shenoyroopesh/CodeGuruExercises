@@ -11,7 +11,7 @@ using ServiceStack.ServiceInterface;
 using ServiceStack.WebHost.Endpoints;
 using System.Linq;
 
-namespace CourseGuru.Web
+namespace CodeGuru.Web
 {
     public class AppHost : AppHostBase
     {

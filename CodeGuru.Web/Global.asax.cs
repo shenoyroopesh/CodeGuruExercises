@@ -1,7 +1,7 @@
 ﻿using System;
 using ServiceStack.MiniProfiler;
 
-namespace CourseGuru.Web
+namespace CodeGuru.Web
 {
     public class Global : System.Web.HttpApplication
     {
