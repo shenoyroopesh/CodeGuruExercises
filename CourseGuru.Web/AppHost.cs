@@ -34,8 +34,8 @@ namespace CourseGuru.Web
         }
     }
 
-    [Route("/course")]
-    [Route("/course/{Id}")]
+    [Route("/courses")]
+    [Route("/courses/{Id}")]
     public class  WebCourse : IReturn<Course>
     {
         public int Id { get; set; }
@@ -45,14 +45,14 @@ namespace CourseGuru.Web
     {
         public object Any(WebCourse request)
         {
-            return new Courses().First(p => p.Id == request.Id);
+            return new Courses().First(p => request.Id == default(int) || p.Id == request.Id);
         }
     }
 
-    [Route("/course/{Id}/level/{LevelNo}")]
+    [Route("/levels/{CourseId}/{LevelNo}")]
     public class WebCourseLevel : IReturn<Level>
     {
-        public int Id { get; set; }
+        public int CourseId { get; set; }
         public int LevelNo { get; set; }
     }
 
@@ -61,7 +61,7 @@ namespace CourseGuru.Web
         public object Get(WebCourseLevel request)
         {
             return new Courses()
-                .First(p => p.Id == request.Id)
+                .First(p => p.Id == request.CourseId)
                 .Levels
                 .First(q => q.Number == request.LevelNo);
         }
