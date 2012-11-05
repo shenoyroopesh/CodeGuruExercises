@@ -106,6 +106,7 @@
     <Content Include="Global.asax" />
     <Content Include="default.md" />
     <Content Include="Views\WebCourseLevel.cshtml" />
+    <Content Include="Views\WebChallenge.cshtml" />
     <None Include="Views\WebCourse.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Views\_Layout.cshtml" />

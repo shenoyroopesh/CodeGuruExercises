@@ -9,6 +9,11 @@ namespace CodeGuru.Exercises
     public class Level
     {
         /// <summary>
+        /// Course Id to which this level belongs
+        /// </summary>
+        public int CourseId { get; set; }
+
+        /// <summary>
         /// Uri for this level
         /// </summary>
         public Uri LevelVideoUri { get; set; }

@@ -22,11 +22,17 @@ namespace CodeGuru.Data
                         {
                             new Level
                                 {
+                                    CourseId = 1,
                                     LevelVideoUri = new Uri("http://player.vimeo.com/video/52632375?badge=0"),
                                     Number = 1,
                                     Challenges = new List<IChallenge>
                                         {
-                                            new NUnitExercises.Level1.Challenge1()
+                                            new NUnitExercises.Level1.Challenge1
+                                                {
+                                                    ChallengeNo = 1,
+                                                    CourseId = 1,
+                                                    LevelNo = 1
+                                                }
                                         }
                                 }
                         },

@@ -66,4 +66,26 @@ namespace CodeGuru.Web
         }
     }
 
+    [Route("/challenges/{CourseId}/{LevelNo}/{ChallengeNo}")]
+    public class WebChallenge : IReturn<IChallenge>
+    {
+        public int CourseId { get; set; }
+        public int LevelNo { get; set; }
+        public int ChallengeNo { get; set; }
+    }
+
+    public class ChallengesService : Service
+    {
+        public object Get(WebChallenge request)
+        {
+            var challenge = new Courses()
+                .First(p => p.Id == request.CourseId)
+                .Levels
+                .First(p => p.Number == request.LevelNo)
+                .Challenges
+                .First(p => p.ChallengeNo == request.ChallengeNo);
+
+            return (IChallenge)challenge;
+        }
+    }
 }

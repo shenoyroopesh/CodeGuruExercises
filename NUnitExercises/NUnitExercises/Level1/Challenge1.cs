@@ -48,10 +48,23 @@ namespace NUnitExercises.Level1
         public Challenge1()
         {
             Instructions = "Modify the below test to ensure that it sufficiently tests the given class";
-            CodeFiles.Add(new CodeFile{Order = 1,Editable = true, InitialText = InitialTestValue});
-            CodeFiles.Add(new CodeFile {Order = 2, Editable = false, InitialText = ProperClass});
-        }
+            CodeFiles.Add(new CodeFile
+                {
+                    Order = 1,
+                    Editable = true,
+                    InitialText = InitialTestValue,
+                    FileName = "PersonTest.cs"
+                });
 
+            CodeFiles.Add(new CodeFile
+                {
+                    Order = 2,
+                    Editable = false,
+                    InitialText = ProperClass,
+                    FileName = "Person.cs"
+                });
+        }
+        
         /// <summary>
         /// Validates the Challenge1 user input
         /// </summary>

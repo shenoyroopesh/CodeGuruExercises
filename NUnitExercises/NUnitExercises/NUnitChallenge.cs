@@ -17,6 +17,13 @@ namespace NUnitExercises
 
         public List<CodeFile> CodeFiles { get; set; }
 
+        public int CourseId { get; set; }
+
+        public int LevelNo { get; set; }
+
+        public int ChallengeNo { get; set; }
+
+
         /// <summary>
         /// Default Constructor
         /// </summary>

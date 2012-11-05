@@ -3,6 +3,11 @@
     public class CodeFile
     {
         /// <summary>
+        /// Name of this file to be shown
+        /// </summary>
+        public string FileName { get; set; }
+
+        /// <summary>
         /// Initial Text
         /// </summary>
         public string InitialText { get; set; }
