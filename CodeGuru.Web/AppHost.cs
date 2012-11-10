@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net;
+﻿using System.Net;
 using CodeGuru.Data;
 using CodeGuru.Exercises;
 using Funq;
@@ -34,58 +33,49 @@ namespace CodeGuru.Web
     }
 
     [Route("/courses")]
-    [Route("/courses/{Id}")]
-    public class  WebCourse : IReturn<Course>
-    {
-        public int Id { get; set; }
-    } 
-
-    public class CoursesService : Service
-    {
-        public object Any(WebCourse request)
-        {
-            return new Courses().First(p => request.Id == default(int) || p.Id == request.Id);
-        }
-    }
-
+    [Route("/courses/{CourseId}")]
     [Route("/levels/{CourseId}/{LevelNo}")]
-    public class WebCourseLevel : IReturn<Level>
-    {
-        public int CourseId { get; set; }
-        public int LevelNo { get; set; }
-    }
-
-    public class LevelsService : Service
-    {
-        public object Get(WebCourseLevel request)
-        {
-            return new Courses()
-                .First(p => p.Id == request.CourseId)
-                .Levels
-                .First(q => q.Number == request.LevelNo);
-        }
-    }
-
     [Route("/challenges/{CourseId}/{LevelNo}/{ChallengeNo}")]
-    public class WebChallenge : IReturn<IChallenge>
+    public class  WebCourseRequest : IReturn<WebCourse>
     {
         public int CourseId { get; set; }
         public int LevelNo { get; set; }
         public int ChallengeNo { get; set; }
+    } 
+    
+    /// <summary>
+    /// Return Course
+    /// </summary>
+    public class WebCourse
+    {
+        public Course Course { get; set; }
+        public int CurrentLevelNo { get; set; }
+        public int CurrentChallengeNo { get; set; }
+
+        public Level CurrentLevel
+        {
+            get { return Course.Levels.FirstOrDefault(p => p.Number == CurrentLevelNo); }
+        }
+
+        public IChallenge CurrentChallenge
+        {
+            get { return CurrentLevel == null ? null : CurrentLevel.Challenges.FirstOrDefault(p => p.LevelNo == CurrentChallengeNo); }
+        }
     }
 
-    public class ChallengesService : Service
+    /// <summary>
+    /// Service
+    /// </summary>
+    public class WebCourseService : Service
     {
-        public object Get(WebChallenge request)
+        public object Get(WebCourseRequest request)
         {
-            var challenge = new Courses()
-                .First(p => p.Id == request.CourseId)
-                .Levels
-                .First(p => p.Number == request.LevelNo)
-                .Challenges
-                .First(p => p.ChallengeNo == request.ChallengeNo);
-
-            return (IChallenge)challenge;
+            return new WebCourse
+                {
+                    Course = new Courses().First(p => p.Id == request.CourseId), 
+                    CurrentLevelNo = request.LevelNo, 
+                    CurrentChallengeNo = request.ChallengeNo
+                };
         }
     }
 }

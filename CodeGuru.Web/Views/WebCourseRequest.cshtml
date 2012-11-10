@@ -1,0 +1,31 @@
+﻿@inherits ViewPage<WebCourse>
+    
+@{
+    ViewBag.Title = Model.Course.CourseName;
+}
+@{
+    if (Model.CurrentLevelNo == default(int))
+    {
+        <h1>@Model.Course.CourseName</h1>
+        <a href="/levels/@Model.Course.Id/1">Start the course</a>
+    }
+    
+    else if (Model.CurrentChallengeNo == default (int))
+    {
+        <div align="center">
+            <iframe src="@Model.CurrentLevel.LevelVideoUri" width="800" 
+                    height="600" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            <br/>
+            <a  href="/challenges/@Model.Course.Id/@Model.CurrentLevelNo/1">Challenges</a>
+        </div>
+    }
+
+    else
+    {
+        foreach (var codeFile in Model.CurrentChallenge.CodeFiles)
+        {
+            <label>@codeFile.FileName</label>
+            <textarea>@codeFile.InitialText</textarea>
+        }
+    }
+}

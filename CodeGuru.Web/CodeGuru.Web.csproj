@@ -105,9 +105,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="default.md" />
-    <Content Include="Views\WebCourseLevel.cshtml" />
-    <Content Include="Views\WebChallenge.cshtml" />
-    <None Include="Views\WebCourse.cshtml" />
+    <None Include="Views\WebCourseRequest.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Views\_Layout.cshtml" />
   </ItemGroup>
@@ -135,6 +133,10 @@
     <ProjectReference Include="..\CodeGuru.Exercises\CodeGuru.Exercises.csproj">
       <Project>{0A28DA74-C317-4C6C-BBF0-0E99022C3B6C}</Project>
       <Name>CodeGuru.Exercises</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NUnitExercises\NUnitExercises\NUnitExercises.csproj">
+      <Project>{3cc7e1c4-1095-45f1-bd98-c23b234bd06e}</Project>
+      <Name>NUnitExercises</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
