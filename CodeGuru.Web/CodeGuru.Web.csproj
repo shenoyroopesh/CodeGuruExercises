@@ -38,10 +38,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BundleTransformer.Core">
+      <HintPath>..\packages\BundleTransformer.Core.1.6.6\lib\net40\BundleTransformer.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BundleTransformer.LessLite">
+      <HintPath>..\packages\BundleTransformer.LessLite.1.6.6\lib\net40\BundleTransformer.LessLite.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.ClientOnly">
+      <HintPath>..\packages\DotlessClientOnly.1.3.1.0\lib\dotless.ClientOnly.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack">
       <HintPath>..\packages\ServiceStack.3.9.25\lib\net35\ServiceStack.dll</HintPath>
     </Reference>
@@ -78,6 +94,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\ServiceStack.Razor.3.9.25\lib\net40\System.Web.Razor.dll</HintPath>
@@ -101,11 +120,194 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="default.md" />
+    <Content Include="Scripts\lib\doc\baboon.png" />
+    <Content Include="Scripts\lib\doc\baboon_vector.svg" />
+    <Content Include="Scripts\lib\doc\compress.html" />
+    <Content Include="Scripts\lib\doc\docs.css" />
+    <Content Include="Scripts\lib\doc\internals.html" />
+    <Content Include="Scripts\lib\doc\manual.html" />
+    <Content Include="Scripts\lib\doc\oldrelease.html" />
+    <Content Include="Scripts\lib\doc\realworld.html" />
+    <Content Include="Scripts\lib\doc\reporting.html" />
+    <Content Include="Scripts\lib\doc\upgrade_v2.2.html" />
+    <Content Include="Scripts\lib\mode\coffeescript\LICENSE" />
+    <Content Include="Scripts\lib\mode\pascal\LICENSE" />
+    <Content Include="Scripts\lib\mode\perl\LICENSE" />
+    <Content Include="Scripts\lib\mode\ruby\LICENSE" />
+    <Content Include="Scripts\lib\mode\r\LICENSE" />
+    <Content Include="Scripts\lib\mode\sieve\LICENSE" />
+    <Content Include="Scripts\lib\mode\xquery\LICENSE" />
     <None Include="Views\WebCourseRequest.cshtml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\lib\codemirror.css" />
+    <Content Include="Scripts\lib\codemirror.js" />
+    <Content Include="Scripts\lib\mode\clike\clike.js" />
+    <Content Include="Scripts\lib\mode\clike\index.html" />
+    <Content Include="Scripts\lib\mode\clike\scala.html" />
+    <Content Include="Scripts\lib\mode\clojure\clojure.js" />
+    <Content Include="Scripts\lib\mode\clojure\index.html" />
+    <Content Include="Scripts\lib\mode\coffeescript\coffeescript.js" />
+    <Content Include="Scripts\lib\mode\coffeescript\index.html" />
+    <Content Include="Scripts\lib\mode\commonlisp\commonlisp.js" />
+    <Content Include="Scripts\lib\mode\commonlisp\index.html" />
+    <Content Include="Scripts\lib\mode\css\css.js" />
+    <Content Include="Scripts\lib\mode\css\index.html" />
+    <Content Include="Scripts\lib\mode\css\test.js" />
+    <Content Include="Scripts\lib\mode\diff\diff.js" />
+    <Content Include="Scripts\lib\mode\diff\index.html" />
+    <Content Include="Scripts\lib\mode\ecl\ecl.js" />
+    <Content Include="Scripts\lib\mode\ecl\index.html" />
+    <Content Include="Scripts\lib\mode\erlang\erlang.js" />
+    <Content Include="Scripts\lib\mode\erlang\index.html" />
+    <Content Include="Scripts\lib\mode\gfm\gfm.js" />
+    <Content Include="Scripts\lib\mode\gfm\index.html" />
+    <Content Include="Scripts\lib\mode\gfm\test.js" />
+    <Content Include="Scripts\lib\mode\go\go.js" />
+    <Content Include="Scripts\lib\mode\go\index.html" />
+    <Content Include="Scripts\lib\mode\groovy\groovy.js" />
+    <Content Include="Scripts\lib\mode\groovy\index.html" />
+    <Content Include="Scripts\lib\mode\haskell\haskell.js" />
+    <Content Include="Scripts\lib\mode\haskell\index.html" />
+    <Content Include="Scripts\lib\mode\haxe\haxe.js" />
+    <Content Include="Scripts\lib\mode\haxe\index.html" />
+    <Content Include="Scripts\lib\mode\htmlembedded\htmlembedded.js" />
+    <Content Include="Scripts\lib\mode\htmlembedded\index.html" />
+    <Content Include="Scripts\lib\mode\htmlmixed\htmlmixed.js" />
+    <Content Include="Scripts\lib\mode\htmlmixed\index.html" />
+    <Content Include="Scripts\lib\mode\javascript\index.html" />
+    <Content Include="Scripts\lib\mode\javascript\javascript.js" />
+    <Content Include="Scripts\lib\mode\javascript\typescript.html" />
+    <Content Include="Scripts\lib\mode\jinja2\index.html" />
+    <Content Include="Scripts\lib\mode\jinja2\jinja2.js" />
+    <Content Include="Scripts\lib\mode\less\index.html" />
+    <Content Include="Scripts\lib\mode\less\less.js" />
+    <Content Include="Scripts\lib\mode\lua\index.html" />
+    <Content Include="Scripts\lib\mode\lua\lua.js" />
+    <Content Include="Scripts\lib\mode\markdown\index.html" />
+    <Content Include="Scripts\lib\mode\markdown\markdown.js" />
+    <Content Include="Scripts\lib\mode\markdown\test.js" />
+    <Content Include="Scripts\lib\mode\mysql\index.html" />
+    <Content Include="Scripts\lib\mode\mysql\mysql.js" />
+    <Content Include="Scripts\lib\mode\ntriples\index.html" />
+    <Content Include="Scripts\lib\mode\ntriples\ntriples.js" />
+    <Content Include="Scripts\lib\mode\ocaml\index.html" />
+    <Content Include="Scripts\lib\mode\ocaml\ocaml.js" />
+    <Content Include="Scripts\lib\mode\pascal\index.html" />
+    <Content Include="Scripts\lib\mode\pascal\pascal.js" />
+    <Content Include="Scripts\lib\mode\perl\index.html" />
+    <Content Include="Scripts\lib\mode\perl\perl.js" />
+    <Content Include="Scripts\lib\mode\php\index.html" />
+    <Content Include="Scripts\lib\mode\php\php.js" />
+    <Content Include="Scripts\lib\mode\pig\index.html" />
+    <Content Include="Scripts\lib\mode\pig\pig.js" />
+    <Content Include="Scripts\lib\mode\plsql\index.html" />
+    <Content Include="Scripts\lib\mode\plsql\plsql.js" />
+    <Content Include="Scripts\lib\mode\properties\index.html" />
+    <Content Include="Scripts\lib\mode\properties\properties.js" />
+    <Content Include="Scripts\lib\mode\python\index.html" />
+    <Content Include="Scripts\lib\mode\python\LICENSE.txt" />
+    <Content Include="Scripts\lib\mode\python\python.js" />
+    <Content Include="Scripts\lib\mode\rpm\changes\changes.js" />
+    <Content Include="Scripts\lib\mode\rpm\changes\index.html" />
+    <Content Include="Scripts\lib\mode\rpm\spec\index.html" />
+    <Content Include="Scripts\lib\mode\rpm\spec\spec.css" />
+    <Content Include="Scripts\lib\mode\rpm\spec\spec.js" />
+    <Content Include="Scripts\lib\mode\rst\index.html" />
+    <Content Include="Scripts\lib\mode\rst\rst.js" />
+    <Content Include="Scripts\lib\mode\ruby\index.html" />
+    <Content Include="Scripts\lib\mode\ruby\ruby.js" />
+    <Content Include="Scripts\lib\mode\rust\index.html" />
+    <Content Include="Scripts\lib\mode\rust\rust.js" />
+    <Content Include="Scripts\lib\mode\r\index.html" />
+    <Content Include="Scripts\lib\mode\r\r.js" />
+    <Content Include="Scripts\lib\mode\scheme\index.html" />
+    <Content Include="Scripts\lib\mode\scheme\scheme.js" />
+    <Content Include="Scripts\lib\mode\shell\index.html" />
+    <Content Include="Scripts\lib\mode\shell\shell.js" />
+    <Content Include="Scripts\lib\mode\sieve\index.html" />
+    <Content Include="Scripts\lib\mode\sieve\sieve.js" />
+    <Content Include="Scripts\lib\mode\smalltalk\index.html" />
+    <Content Include="Scripts\lib\mode\smalltalk\smalltalk.js" />
+    <Content Include="Scripts\lib\mode\smarty\index.html" />
+    <Content Include="Scripts\lib\mode\smarty\smarty.js" />
+    <Content Include="Scripts\lib\mode\sparql\index.html" />
+    <Content Include="Scripts\lib\mode\sparql\sparql.js" />
+    <Content Include="Scripts\lib\mode\stex\index.html" />
+    <Content Include="Scripts\lib\mode\stex\stex.js" />
+    <Content Include="Scripts\lib\mode\stex\test.js" />
+    <Content Include="Scripts\lib\mode\tiddlywiki\index.html" />
+    <Content Include="Scripts\lib\mode\tiddlywiki\tiddlywiki.css" />
+    <Content Include="Scripts\lib\mode\tiddlywiki\tiddlywiki.js" />
+    <Content Include="Scripts\lib\mode\tiki\index.html" />
+    <Content Include="Scripts\lib\mode\tiki\tiki.css" />
+    <Content Include="Scripts\lib\mode\tiki\tiki.js" />
+    <Content Include="Scripts\lib\mode\vbscript\index.html" />
+    <Content Include="Scripts\lib\mode\vbscript\vbscript.js" />
+    <Content Include="Scripts\lib\mode\vb\index.html" />
+    <Content Include="Scripts\lib\mode\vb\LICENSE.txt" />
+    <Content Include="Scripts\lib\mode\vb\vb.js" />
+    <Content Include="Scripts\lib\mode\velocity\index.html" />
+    <Content Include="Scripts\lib\mode\velocity\velocity.js" />
+    <Content Include="Scripts\lib\mode\verilog\index.html" />
+    <Content Include="Scripts\lib\mode\verilog\verilog.js" />
+    <Content Include="Scripts\lib\mode\xml\index.html" />
+    <Content Include="Scripts\lib\mode\xml\xml.js" />
+    <Content Include="Scripts\lib\mode\xquery\index.html" />
+    <Content Include="Scripts\lib\mode\xquery\test\index.html" />
+    <Content Include="Scripts\lib\mode\xquery\test\testBase.js" />
+    <Content Include="Scripts\lib\mode\xquery\test\testEmptySequenceKeyword.js" />
+    <Content Include="Scripts\lib\mode\xquery\test\testMultiAttr.js" />
+    <Content Include="Scripts\lib\mode\xquery\test\testNamespaces.js" />
+    <Content Include="Scripts\lib\mode\xquery\test\testProcessingInstructions.js" />
+    <Content Include="Scripts\lib\mode\xquery\test\testQuotes.js" />
+    <Content Include="Scripts\lib\mode\xquery\xquery.js" />
+    <Content Include="Scripts\lib\mode\yaml\index.html" />
+    <Content Include="Scripts\lib\mode\yaml\yaml.js" />
+    <Content Include="Scripts\lib\mode\z80\index.html" />
+    <Content Include="Scripts\lib\mode\z80\z80.js" />
+    <Content Include="Scripts\lib\theme\ambiance-mobile.css" />
+    <Content Include="Scripts\lib\theme\ambiance.css" />
+    <Content Include="Scripts\lib\theme\blackboard.css" />
+    <Content Include="Scripts\lib\theme\cobalt.css" />
+    <Content Include="Scripts\lib\theme\eclipse.css" />
+    <Content Include="Scripts\lib\theme\elegant.css" />
+    <Content Include="Scripts\lib\theme\erlang-dark.css" />
+    <Content Include="Scripts\lib\theme\lesser-dark.css" />
+    <Content Include="Scripts\lib\theme\monokai.css" />
+    <Content Include="Scripts\lib\theme\neat.css" />
+    <Content Include="Scripts\lib\theme\night.css" />
+    <Content Include="Scripts\lib\theme\rubyblue.css" />
+    <Content Include="Scripts\lib\theme\twilight.css" />
+    <Content Include="Scripts\lib\theme\vibrant-ink.css" />
+    <Content Include="Scripts\lib\theme\xq-dark.css" />
+    <Content Include="Scripts\lib\util\closetag.js" />
+    <Content Include="Scripts\lib\util\continuecomment.js" />
+    <Content Include="Scripts\lib\util\dialog.css" />
+    <Content Include="Scripts\lib\util\dialog.js" />
+    <Content Include="Scripts\lib\util\foldcode.js" />
+    <Content Include="Scripts\lib\util\formatting.js" />
+    <Content Include="Scripts\lib\util\javascript-hint.js" />
+    <Content Include="Scripts\lib\util\loadmode.js" />
+    <Content Include="Scripts\lib\util\match-highlighter.js" />
+    <Content Include="Scripts\lib\util\multiplex.js" />
+    <Content Include="Scripts\lib\util\overlay.js" />
+    <Content Include="Scripts\lib\util\pig-hint.js" />
+    <Content Include="Scripts\lib\util\runmode-standalone.js" />
+    <Content Include="Scripts\lib\util\runmode.js" />
+    <Content Include="Scripts\lib\util\search.js" />
+    <Content Include="Scripts\lib\util\searchcursor.js" />
+    <Content Include="Scripts\lib\util\simple-hint.css" />
+    <Content Include="Scripts\lib\util\simple-hint.js" />
+    <Content Include="Scripts\lib\util\xml-hint.js" />
     <Content Include="Web.config" />
     <Content Include="Views\_Layout.cshtml" />
   </ItemGroup>
@@ -139,6 +341,7 @@
       <Name>NUnitExercises</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

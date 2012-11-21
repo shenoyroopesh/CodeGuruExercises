@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Optimization;
 using ServiceStack.MiniProfiler;
 
 namespace CodeGuru.Web

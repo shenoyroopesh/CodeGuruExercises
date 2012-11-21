@@ -1,16 +1,17 @@
-﻿<!doctype html>
+﻿@using System.Web.Optimization
+<!doctype html>
 <html lang="en-us">
-    <head>
-        <title>@ViewBag.Title</title>
-        <link href="/stars/style.css" rel="stylesheet"/>
-        <style type="text/css">
-            body {
-                background: #E6E6E6;
-            }
-        </style>
-    </head>
-    <body>
-        @RenderBody()
-        
-    </body>
+<head>
+    <title>@ViewBag.Title</title>
+    <style type="text/css">
+        body
+        {
+            background: #E6E6E6;
+        }
+    </style>
+</head>
+<body>
+    @RenderBody()
+
+</body>
 </html>

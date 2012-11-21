@@ -72,7 +72,7 @@ namespace CodeGuru.Web
         {
             return new WebCourse
                 {
-                    Course = new Courses().First(p => p.Id == request.CourseId), 
+                    Course = new Courses().First(p => p.Id == request.CourseId || request.CourseId == default(int)), 
                     CurrentLevelNo = request.LevelNo, 
                     CurrentChallengeNo = request.ChallengeNo
                 };
