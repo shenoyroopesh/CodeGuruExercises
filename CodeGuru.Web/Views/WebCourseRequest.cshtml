@@ -30,15 +30,19 @@
         foreach (var codeFile in Model.CurrentChallenge.CodeFiles)
         {
             <label>@codeFile.FileName</label>
-            <textarea>@codeFile.InitialText</textarea>
+            <textarea data-editable="@codeFile.Editable">@codeFile.InitialText</textarea>
         }
+
+        <button value="Submit"></button>
+        
         <script type="text/javascript">
             $('textarea').each(function(index, textArea) {
                 var editor = CodeMirror.fromTextArea(textArea, {
-                    mode: "text/x-csrc",
+                    mode: "text/x-csharp",
                     lineNumbers: true,
                     matchBrackets: true,
-                    theme: "ambiance"
+                    theme: "ambiance",
+                    readOnly: $(textArea).data('editable').toLowerCase() == "false" 
                 });
             });
         </script>
