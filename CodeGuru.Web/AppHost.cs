@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Collections.Generic;
+using System.Net;
 using CodeGuru.Data;
 using CodeGuru.Exercises;
 using Funq;
@@ -41,6 +42,8 @@ namespace CodeGuru.Web
         public int CourseId { get; set; }
         public int LevelNo { get; set; }
         public int ChallengeNo { get; set; }
+
+        public List<string> UserCode { get; set; }
     } 
     
     /// <summary>
@@ -51,6 +54,7 @@ namespace CodeGuru.Web
         public Course Course { get; set; }
         public int CurrentLevelNo { get; set; }
         public int CurrentChallengeNo { get; set; }
+        public string Message { get; set; }
 
         public Level CurrentLevel
         {
@@ -70,12 +74,24 @@ namespace CodeGuru.Web
     {
         public object Get(WebCourseRequest request)
         {
+            return GetModelFromRequest(request);
+        }
+
+        public object Post(WebCourseRequest request)
+        {
+            if (!request.UserCode.Any()) return new WebCourse();
+
+            return GetModelFromRequest(request).CurrentChallenge.Validate(request.UserCode);
+        }
+
+        private static WebCourse GetModelFromRequest(WebCourseRequest request)
+        {
             return new WebCourse
-                {
-                    Course = new Courses().First(p => p.Id == request.CourseId || request.CourseId == default(int)), 
-                    CurrentLevelNo = request.LevelNo, 
-                    CurrentChallengeNo = request.ChallengeNo
-                };
+            {
+                Course = new Courses().First(p => p.Id == request.CourseId || request.CourseId == default(int)),
+                CurrentLevelNo = request.LevelNo,
+                CurrentChallengeNo = request.ChallengeNo
+            };
         }
     }
 }

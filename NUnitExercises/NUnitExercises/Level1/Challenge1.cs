@@ -7,15 +7,15 @@ namespace NUnitExercises.Level1
     {
         #region constants
         public const string ProperClass = @"
-        public class Person 
-        {
-            public string Name { get; set; }
+public class Person 
+{
+    public string Name { get; set; }
 
-            public Person(string name)
-            {
-                Name = name;
-            }
-        }
+    public Person(string name)
+    {
+        Name = name;
+    }
+}
         ";
 
         public const string BadClass1 = @"
@@ -30,19 +30,19 @@ namespace NUnitExercises.Level1
         ";
 
         public const string InitialTestValue = @"
-        using NUnit.Framework;
+using NUnit.Framework;
 
-            //add necessary attributes to the test class and the method
+//add necessary attributes to the test class and the method
 
-            public class PersonTest
-            {
-                
-                public void CheckConstructor()
-                {
-                    //write test logic here
-                }
-            }
-        ";
+public class PersonTest
+{
+    
+    public void CheckConstructor()
+    {
+        //write test logic here
+    }
+}
+";
         #endregion
 
         public Challenge1()

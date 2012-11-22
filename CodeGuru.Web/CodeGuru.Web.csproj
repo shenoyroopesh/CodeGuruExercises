@@ -189,6 +189,8 @@
     <Content Include="default.md" />
     <Content Include="Scripts\jquery-ui-1.9.0.js" />
     <Content Include="Scripts\jquery-ui-1.9.0.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\lib\doc\baboon.png" />
     <Content Include="Scripts\lib\doc\baboon_vector.svg" />
     <Content Include="Scripts\lib\doc\compress.html" />

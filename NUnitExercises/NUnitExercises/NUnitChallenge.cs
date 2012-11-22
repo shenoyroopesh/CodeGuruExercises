@@ -70,11 +70,14 @@ namespace NUnitExercises
         /// <returns></returns>
         protected static Assembly BuildAssembly(string[] code)
         {
-            var compilerparams = new CompilerParameters(new[] {"nunit.framework.dll"})
+            var compilerparams = new CompilerParameters() 
                 {
                     GenerateExecutable = false,
                     GenerateInMemory = true
                 };
+
+            //need to reference nunit framework
+            compilerparams.ReferencedAssemblies.Add(typeof (NUnit.Framework.TestCaseAttribute).Assembly.Location);
 
             var results = new CSharpCodeProvider()
                 .CompileAssemblyFromSource(compilerparams, code);
