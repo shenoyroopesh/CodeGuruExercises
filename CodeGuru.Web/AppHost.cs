@@ -72,26 +72,23 @@ namespace CodeGuru.Web
     /// </summary>
     public class WebCourseService : Service
     {
-        public object Get(WebCourseRequest request)
+        public object Any(WebCourseRequest request)
         {
             return GetModelFromRequest(request);
         }
 
-        public object Post(WebCourseRequest request)
-        {
-            if (!request.UserCode.Any()) return new WebCourse();
-
-            return GetModelFromRequest(request).CurrentChallenge.Validate(request.UserCode);
-        }
-
         private static WebCourse GetModelFromRequest(WebCourseRequest request)
         {
-            return new WebCourse
+            var course = new WebCourse
             {
                 Course = new Courses().First(p => p.Id == request.CourseId || request.CourseId == default(int)),
                 CurrentLevelNo = request.LevelNo,
-                CurrentChallengeNo = request.ChallengeNo
+                CurrentChallengeNo = request.ChallengeNo,
             };
+
+            if (request.UserCode != null && request.UserCode.Any()) course.Message = course.CurrentChallenge.Validate(request.UserCode);
+
+            return course;
         }
     }
 }

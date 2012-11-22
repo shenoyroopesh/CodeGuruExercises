@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CodeGuru.Exercises;
 
 namespace NUnitExercises.Level1
@@ -72,21 +73,29 @@ public class PersonTest
         /// <returns></returns>
         public string Validate(List<string> code)
         {
-            //check good case
-            code.Add(ProperClass);
-            var result = RunTests(code);
-            if (!result.IsSuccess)
-                return result.Message ?? "Check if tests are properly defined";
+            try
+            {
+                //check good case
+                code.Add(ProperClass);
+                var result = RunTests(code);
+                if (!result.IsSuccess)
+                    return result.Message ?? "Check if tests are properly defined";
 
-            //check bad case(s)
-            code.Remove(ProperClass);
-            code.Add(BadClass1);
-            result = RunTests(code);
-            if (result.IsSuccess)
-                return "Test doesn't test all class behavior properly";
+                //check bad case(s)
+                code.Remove(ProperClass);
+                code.Add(BadClass1);
+                result = RunTests(code);
+                if (result.IsSuccess)
+                    return "Test doesn't test all class behavior properly";
 
-            //reaches here, means code is fine!
-            return string.Empty;
+                //reaches here, means code is fine!
+                return string.Empty;
+
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
         }
     }
 }
