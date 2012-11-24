@@ -71,10 +71,10 @@
                 $("#tabs").tabs();
 
                 $("input[type=submit], a, button")
-                    .button()
-                    .click(function(event) {
-                        event.preventDefault();
-                    });
+                    .button();
+                    //.click(function(event) {
+                    //    event.preventDefault();
+                    //});
 
 
                 $('#submitChallenge').click(function(event) {
@@ -86,7 +86,7 @@
 
                     $.ajax({
                         type: "POST",
-                        url: "/challenges/1/1/1",
+                        url: "@Request.RawUrl",
                         data: JSON.stringify({ UserCode: codeFiles }),
                         contentType: "application/json; charset=utf-8",
                         success: function (data, status) {
