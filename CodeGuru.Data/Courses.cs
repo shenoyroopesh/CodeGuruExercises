@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CodeGuru.Exercises;
 using System.Linq;
+using NUnitExercises.Level1;
 
 namespace CodeGuru.Data
 {
@@ -32,7 +33,13 @@ namespace CodeGuru.Data
                                                     ChallengeNo = 1,
                                                     CourseId = 1,
                                                     LevelNo = 1
-                                                }
+                                                },
+                                                new Challenge2
+                                                    {
+                                                        ChallengeNo = 2,
+                                                        CourseId = 1,
+                                                        LevelNo = 1
+                                                    }
                                         }
                                 }
                         },

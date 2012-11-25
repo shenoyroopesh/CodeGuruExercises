@@ -54,6 +54,21 @@ namespace CodeGuru.Web
         public Course Course { get; set; }
         public int CurrentLevelNo { get; set; }
         public int CurrentChallengeNo { get; set; }
+
+        /// <summary>
+        /// Gives next challenge no if it exists, else returns 0
+        /// </summary>
+        public int NextChallengeNo
+        {
+            get
+            {
+                return CurrentLevel == null ? 0 : CurrentLevel.Challenges.Any(p => p.ChallengeNo == CurrentChallengeNo + 1) ? CurrentChallengeNo + 1 : 0;
+            }
+        }
+
+        /// <summary>
+        /// User code validations if any
+        /// </summary>
         public string Message { get; set; }
 
         public Level CurrentLevel
@@ -63,7 +78,7 @@ namespace CodeGuru.Web
 
         public IChallenge CurrentChallenge
         {
-            get { return CurrentLevel == null ? null : CurrentLevel.Challenges.FirstOrDefault(p => p.LevelNo == CurrentChallengeNo); }
+            get { return CurrentLevel == null ? null : CurrentLevel.Challenges.FirstOrDefault(p => p.ChallengeNo == CurrentChallengeNo); }
         }
     }
 

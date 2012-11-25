@@ -31,6 +31,7 @@
     else
     {
         <div id="tabs">
+            <a id="nextChallengeUrl" hidden="true" href="/challenges/@Model.Course.Id/@Model.CurrentLevelNo/@Model.NextChallengeNo"></a>
             <p>@Model.CurrentChallenge.Instructions</p>
             <ul>
                 @{
@@ -70,12 +71,8 @@
 
                 $("#tabs").tabs();
 
-                $("input[type=submit], a, button")
+                $("input[type=submit]")
                     .button();
-                    //.click(function(event) {
-                    //    event.preventDefault();
-                    //});
-
 
                 $('#submitChallenge').click(function(event) {
                     var codeFiles = new Array();
@@ -84,6 +81,7 @@
                         codeFiles.push(code.getValue());
                     });
 
+
                     $.ajax({
                         type: "POST",
                         url: "@Request.RawUrl",
@@ -91,7 +89,11 @@
                         contentType: "application/json; charset=utf-8",
                         success: function (data, status) {
                             $('#errorMessage').text(data.Message);
-                            if (data.Message == '') alert('Yay.. success');
+                            if (data.Message == '') {
+                                alert('Yay.. success');
+                                var nextUrl = $('#nextChallengeUrl').attr('href');
+                                window.location.replace(nextUrl);
+                            }
                         },
                         failure: function (errMsg) {
                             alert(errMsg);
