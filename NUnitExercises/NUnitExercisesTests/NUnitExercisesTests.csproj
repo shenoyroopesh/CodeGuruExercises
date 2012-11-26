@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Level1\Challenge1Tests.cs" />
     <Compile Include="Level1\Challenge2Tests.cs" />
+    <Compile Include="Level1\Challenge3Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

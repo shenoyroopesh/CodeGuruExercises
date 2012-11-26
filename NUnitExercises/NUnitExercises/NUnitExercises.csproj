@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Level1\Challenge1.cs" />
     <Compile Include="Level1\Challenge2.cs" />
+    <Compile Include="Level1\Challenge3.cs" />
     <Compile Include="NUnitChallenge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
