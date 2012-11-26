@@ -68,7 +68,7 @@ public class Person
 using NUnit.Framework;
 
 //add necessary attributes to the test class and the method
-
+[TestFixture]
 public class PersonTest
 {
     [Test]

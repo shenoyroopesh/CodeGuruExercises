@@ -39,6 +39,12 @@ namespace CodeGuru.Data
                                                         ChallengeNo = 2,
                                                         CourseId = 1,
                                                         LevelNo = 1
+                                                    },
+                                                new Challenge3
+                                                    {
+                                                        ChallengeNo = 3,
+                                                        CourseId = 1,
+                                                        LevelNo = 1
                                                     }
                                         }
                                 }
