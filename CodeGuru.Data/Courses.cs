@@ -28,24 +28,24 @@ namespace CodeGuru.Data
                                     Number = 1,
                                     Challenges = new List<IChallenge>
                                         {
-                                            new NUnitExercises.Level1.Challenge1
+                                            new Challenge1
                                                 {
                                                     ChallengeNo = 1,
                                                     CourseId = 1,
                                                     LevelNo = 1
                                                 },
-                                                new Challenge2
-                                                    {
-                                                        ChallengeNo = 2,
-                                                        CourseId = 1,
-                                                        LevelNo = 1
-                                                    },
-                                                new Challenge3
-                                                    {
-                                                        ChallengeNo = 3,
-                                                        CourseId = 1,
-                                                        LevelNo = 1
-                                                    }
+                                            new Challenge2
+                                                {
+                                                    ChallengeNo = 2,
+                                                    CourseId = 1,
+                                                    LevelNo = 1
+                                                },
+                                            new Challenge3
+                                                {
+                                                    ChallengeNo = 3,
+                                                    CourseId = 1,
+                                                    LevelNo = 1
+                                                }
                                         }
                                 }
                         },
